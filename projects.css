@@ -1,0 +1,82 @@
+@import "./global.css";
+
+.title-number {
+	border: 1px solid var(--dark-color);
+	padding: 2rem;
+	border-radius: 50%;
+}
+
+.main-title {
+	margin: 2.5rem 2rem;
+	font-size: 3.5rem;
+}
+
+.projects-cards {
+	/* grid-template-columns: repeat(8, 1fr); */
+	gap: 2.5rem;
+}
+
+.card-image {
+	background-color: aqua;
+	height: 30rem;
+	margin-bottom: 3rem;
+	display: flex;
+	border-radius: 0.4rem;
+}
+
+.card-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	padding: 1rem;
+}
+
+.card-heading {
+	/* background-color: bisque; */
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.buttons-container {
+	display: flex;
+	justify-content: space-around;
+}
+
+.access-button {
+	width: 10rem;
+	height: 10rem;
+	border: 1px solid var(--dark-color);
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 50%;
+	font-weight: bold;
+}
+
+.button-fill {
+	position: relative;
+	transition: color .25s;
+	overflow: hidden;
+}
+
+.button-fill::before {
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background-color: var(--dark-color);
+	top: 0;
+	left: 0;
+	z-index: -1;
+	transform: scale(0);
+	transform-origin: bottom left;
+	border-radius: 50%;
+	transition: transform .5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.button-fill:hover::before,
+.button-fill:focus::before {
+	transform: scale(1);
+}
